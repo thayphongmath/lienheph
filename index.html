@@ -300,7 +300,7 @@
 </head>
 
 <body>
-    
+    <!-- Password Screen - Trang ảo trắng -->
     <div class="password-screen" id="passwordScreen">
         <div class="password-box">
             <h2><i class="fas fa-lock"></i> Nhập mật khẩu</h2>
@@ -328,13 +328,174 @@
             </section>
 
             <div class="student-list" id="studentList">
-                
+                <!-- Danh sách học sinh sẽ được thêm bằng JavaScript sau khi decode -->
             </div>
         </div>
     </div>
 
     <script>
-        const _0x8e9f = ['MTIzNDU2', 'YXRvYg==', 'cGFyc2VJbnQ=', 'Z2V0RWxlbWVudEJ5SWQ=', 'cGFzc3dvcmRJbnB1dA==', 'cGFzc3dvcmRFcnJvcg==', 'dHJpbQ==', 'dGV4dENvbnRlbnQ=', 'c3R5bGU=', 'ZGlzcGxheQ==', 'YmxvY2s=', 'aGFzaFBhc3N3b3Jk', 'cGFzc3dvcmRIYXNo', 'cGFnZUFjY2Vzcw==', 'c2V0SXRlbQ==', 'Z2V0SXRlbQ==', 'cmVtb3ZlSXRlbQ==', 'bm93', 'dG9TdHJpbmc=', 'cGFyc2VJbnQ=', 'aGlkZGVu', 'dmlzaWJsZQ==', 'YWRkQ2xhc3M=', 'cmVtb3ZlQ2xhc3M=', 'aW5uZXJIVE1M', 'c3R1ZGVudExpc3Q=', 'aW5uZXJIVE1M=', 'Y3JlYXRlRWxlbWVudA==', 'ZGl2', 'c3R1ZGVudC1jYXJk', 'YXBwZW5kQ2hpbGQ=', 'Zm9yRWFjaA==', 'dGVhY2hlckxpbms=', 'a2V5cHJlc3M=', 'a2V5', 'RW50ZXI=', 'Y2xpY2s=', 'cHJldmVudERlZmF1bHQ=']; const _0x1a2b = _0x8e9f; const _0x9i0j = atob(_0x1a2b[0]); const _0xabc1 = _0x9i0j; let _0xdef2 = null; const _0xghi3 = 'W3sibmFtZSI6Ik5ndXnhu4VuIE1pbmggQW5oIiwicGhvbmUiOiIwOTEzNDM1NzM1In0seyJuYW1lIjoiTmd1eeG7gW4gVGjhu4cgWHXhuqFuIE5oaSIsInBob25lIjoiMDk3OTg0NTA2NCJ9LHsibmFtZSI6IlRy4bqnbiBUaOG7gyBD4bqhbSBOaHVuZyIsInBob25lIjoiMDMzODQ2MjYxOCJ9LHsibmFtZSI6IlRy4bqnbiBUaOG7gyBUaMO6eSBRdeG7gW5oIiwicGhvbmUiOiIwMzk0NTY5NzQyIn0seyJuYW1lIjoiTmd1eeG7gW4gVGjhu4cgVMO6IFPGoW5nIiwicGhvbmUiOiIwOTc0NjQ3NDM4In0seyJuYW1lIjoiTMOqIMSQw7RuZyBUaHkiLCJwaG9uZSI6IjA5NDExMDI5NjEifSx7Im5hbWUiOiJOZ3V54buBbiBQaOG6oW0gQuG6oW8gVHLhuqFuIiwicGhvbmUiOiIwNzA0OTYwNDA1In0seyJuYW1lIjoiTmd1eeG7gW4gVGjhu4cgS2ltIEPGsOG7o25nIiwicGhvbmUiOiIwMzM3NjUzMzc2In0seyJuYW1lIjoiSHXhu4luaCBNaW5oIFTGsOG7o25nIiwicGhvbmUiOiIwMzU1MjIzMjUyIn0seyJuYW1lIjoiTmd1eeG7gW4gVGjhu4cgVGjhu6N5IEThu6luZyIsInBob25lIjoiMDM3NTE4MTUxNiJ9LHsibmFtZSI6Ik5ndXnhu4VuIFRoYW5oIMSQ4bqhdCIsInBob25lIjoiMDc4MzU5MzQ3MCJ9LHsibmFtZSI6IlRy4bqnbiBUaeG7gW4gRMSQ4bqhdCIsInBob25lIjoiMDkwMzA2MzM4NyJ9LHsibmFtZSI6IkJ1aSBNaW5oIMSQ4bqhdWMiLCJwaG9uZSI6IjA5NDI3Nzg3OTIifSx7Im5hbWUiOiJUcuG6p24gR2lhIEh1w6kiLCJwaG9uZSI6IjA4Mzk1MzcwNjAifSx7Im5hbWUiOiLEkWluaCBUcnVuZyBLacOqbiIsInBob25lIjoiMDk0OTc2Njc4OCJ9LHsibmFtZSI6IkzDqiBUaOG7gyBUaMO6eSBLacOqbiIsInBob25lIjoiMDMzMzA1ODU5NiJ9LHsibmFtZSI6IkzDqiBUaOG7gyBUaMO6eSBLacOqbiIsInBob25lIjoiMDk0OTUyNDczOCJ9LHsibmFtZSI6IlRy4bqnbiBOZ3V54buBbiBIw7JuZyBMYW0iLCJwaG9uZSI6IjA4MzgyNDQxMTcifSx7Im5hbWUiOiJOZ3V54buBbiBUaOG7gyBLacOqbiBMacOqbiIsInBob25lIjoiMDg2OTg2NjAxNCJ9LHsibmFtZSI6IkzDqiBOZ2PDqiBMaW5oIiwicGhvbmUiOiIwOTA3MDE3NDk2In0seyJuYW1lIjoiVMSnbmcgSG/DoW5nIFRyw7p1YyBMaW5oIiwicGhvbmUiOiIwOTc1NTY1MTczIn0seyJuYW1lIjoiVHLhuqduIFRoYW5oIExvbmciLCJwaG9uZSI6IjA4MzQ1NzI3OTUifSx7Im5hbWUiOiJOZ3V54buBbiBLaW0gVOG7o25nIE15IiwicGhvbmUiOiIwOTM5NzE1NzM1In0seyJuYW1lIjoiUGjhuqFtIFRoaOG7gyBLaW0gTmdv4bqjYyIsInBob25lIjoiMDM2Nzk4Nzc0NCJ9LHsibmFtZSI6Ik5ndXnhu4VuIFRoaW7hu4duIE5ow6BuIiwicGhvbmUiOiIwMzMyMTA4NzY2In0seyJuYW1lIjoiVHLhuqduIE5n4bqjYyBOaMOgbiIsInBob25lIjoiMDk2NTEyMTUzMiJ9LHsibmFtZSI6IlRy4bqnbiBUaOG7gyBZ4bqldG4gTmhpIiwicGhvbmUiOiIwNzc0MDgyMDk3In0seyJuYW1lIjoiQnVpIFRoaOG7gyBUaGnhw6puIE5odSIsInBob25lIjoiMDM5MjA2MDA1MCJ9LHsibmFtZSI6IkJ1aSBUcuG6p24gUXV5bmggTmh1IiwicGhvbmUiOiIwNzk4MDA2MjA0In0seyJuYW1lIjoiUGjhuqFtIE1pbmggTmh1w6l0IiwicGhvbmUiOiIwMzc1MTg0NTYwIn0seyJuYW1lIjoiTMOqIE1pbmggUXXDrSIsInBob25lIjoiMDM1NDMyODQxNiJ9LHsibmFtZSI6IkJ1aSBUaOG7gyBLacOqbiBRdXkiLCJwaG9uZSI6IjA5MDc1NTYxOTAifSx7Im5hbWUiOiJOZ3V54buBbiBUaOG7gyBCw6tjaCBUaGkiLCJwaG9uZSI6IjAzNTQxMDU0MjQifSx7Im5hbWUiOiJUcnXGsW5nIFRoaOG7gyBC4bqhb28gVGhpIiwicGhvbmUiOiIwMzMyMDUwNjY3In0seyJuYW1lIjoiTmd1eeG7gW4gRMSQ4bqhdWMgVGhpbmgiLCJwaG9uZSI6IjAzMzU3NzY3NTIifSx7Im5hbWUiOiJEw7x1b25nIE5n4bqjYyBUaHXhu4MiLCJwaG9uZSI6IjA5MTg5OTUwMzMifSx7Im5hbWUiOiJIw7JuZyBOZ2PDqiBBbmggVGh14buDIiwicGhvbmUiOiIwMzI4Mjk0NjE0In0seyJuYW1lIjoiTMOqIFbhuqBuIFRodeG7gW4iLCJwaG9uZSI6IjAzNTI4ODA0NDQifSx7Im5hbWUiOiJMw6ogSG/DoW5nIEJhbyBUaHkiLCJwaG9uZSI6IjAzNjQ3NzM0NTEifSx7Im5hbWUiOiJOZ3V54buBbiBUaOG7gyBCYW8gVHLhuqFtIiwicGhvbmUiOiIwNzk1OTExMzg0In0seyJuYW1lIjoiTmd1eeG7gW4gVGjhu4cgTmdv4bqjYyBUcuG6p24iLCJwaG9uZSI6IjA5Mzk1MDYyNDcifSx7Im5hbWUiOiJMw6ogVGjhu4cgTmh1IMSRIiwicGhvbmUiOiIwMzY1MTE1NDQ0In0seyJuYW1lIjoiTMOqIFRoaOG7gyBOZ2PDqiBZ4bqldG4iLCJwaG9uZSI6IjAzNDk5NTExNDUifSx7Im5hbWUiOiJOZ3V54buBbiBUaOG7gyBUaOG7oW8gVmkiLCJwaG9uZSI6IjA5NzU4NDQ0NTgifSx7Im5hbWUiOiJOZ3V54buBbiBUcnXDqWMgxJDhuqFvIiwicGhvbmUiOiIwOTA3NDkwODM4In0seyJuYW1lIjoiTmd1eeG7gW4gVGjhu4cgw4FuaCBIw7JuZyIsInBob25lIjoiMDM3MjkzMDQxMyJ9LHsibmFtZSI6IkhhIFRoaOG7gyBUdXnhw6l0IE15IiwicGhvbmUiOiIwMzQyMjM3NjcxIn0seyJuYW1lIjoiTmd1eeG7gW4gVGjhu4cgS2ltIFRpw6puIiwicGhvbmUiOiIwOTc3MzcxMzE4In1d'; async function _0x2j3k(_0x4l5m) { const _0x6n7o = new TextEncoder(); const _0x8p9q = _0x6n7o.encode(_0x4l5m); const _0x0r1s = await crypto.subtle.digest('SHA-256', _0x8p9q); const _0x2t3u = Array.from(new Uint8Array(_0x0r1s)); const _0x4v5w = _0x2t3u.map(_0x6x7y => _0x6x7y.toString(16).padStart(2, '0')).join(''); return _0x4v5w; } (async function () { _0xdef2 = await _0x2j3k(_0xabc1); })(); function _0x8z9a() { const _0x0b1c = sessionStorage[_0x1a2b[15]](_0x1a2b[13]); if (_0x0b1c) { const _0x2d3e = parseInt(_0x0b1c); const _0x4f5g = 3600000; if (Date[_0x1a2b[17]]() - _0x2d3e < _0x4f5g) { return !0; } else { sessionStorage[_0x1a2b[16]](_0x1a2b[13]); } } return !1; } function _0x6h7i() { sessionStorage[_0x1a2b[14]](_0x1a2b[13], Date[_0x1a2b[17]]()[_0x1a2b[18]]()); } function _0x8j9k() { try { const _0x0l1m = atob(_0xghi3); return JSON.parse(_0x0l1m); } catch (_0x2n3o) { return []; } } function _0x4p5q() { const _0x6r7s = _0x8j9k(); const _0x8t9u = document[_0x1a2b[3]](_0x1a2b[24]); _0x8t9u[_0x1a2b[25]] = ''; _0x6r7s[_0x1a2b[30]](_0x0v1w => { const _0x2x3y = document[_0x1a2b[27]](_0x1a2b[28]); _0x2x3y.className = _0x1a2b[29]; _0x2x3y[_0x1a2b[25]] = `<div class="student-name"><i class="fas fa-user-graduate"></i> ${_0x0v1w.name}</div><div class="action-buttons"><a href="tel:${_0x0v1w.phone}" class="btn-call"><i class="fas fa-phone-volume"></i> Gọi</a><a href="https://zalo.me/${_0x0v1w.phone}" class="btn-zalo" target="_blank"><i class="fab fa-zalo"></i> ZALO</a></div>`; _0x8t9u[_0x1a2b[30]](_0x2x3y); }); } async function _0xa1b2() { const _0xc3d4 = document[_0x1a2b[3]](_0x1a2b[4])[_0x1a2b[6]]()[_0x1a2b[5]](); const _0xe5f6 = document[_0x1a2b[3]](_0x1a2b[5]); if (!_0xc3d4) { _0xe5f6[_0x1a2b[7]] = 'Vui lòng nhập mật khẩu!'; _0xe5f6[_0x1a2b[8]][_0x1a2b[9]] = _0x1a2b[10]; return; } try { if (!_0xdef2) { _0xdef2 = await _0x2j3k(_0xabc1); } const _0xg7h8 = await _0x2j3k(_0xc3d4); if (_0xg7h8 === _0xdef2) { _0x6h7i(); const _0xi9j0 = document[_0x1a2b[3]]('passwordScreen'); const _0xk1l2 = document[_0x1a2b[3]]('mainContent'); _0xi9j0[_0x1a2b[22]](_0x1a2b[20]); _0xk1l2[_0x1a2b[22]](_0x1a2b[21]); _0x4p5q(); const _0xm3n4 = document[_0x1a2b[3]](_0x1a2b[31]); _0xm3n4[_0x1a2b[24]] = '<i class="fas fa-paper-plane"></i> Liên hệ nhanh PH (Đã kích hoạt)'; _0xm3n4[_0x1a2b[8]].background = 'linear-gradient(135deg, #2ecc71 0%, #27ae60 100%)'; _0xm3n4.onclick = function () { alert('Tính năng liên hệ nhanh PH đã được kích hoạt!\n\nBạn có thể sử dụng các nút Gọi và Zalo bên dưới để liên hệ với phụ huynh.'); }; } else { _0xe5f6[_0x1a2b[7]] = 'Mật khẩu không đúng!'; _0xe5f6[_0x1a2b[8]][_0x1a2b[9]] = _0x1a2b[10]; document[_0x1a2b[3]](_0x1a2b[4]).value = ''; document[_0x1a2b[3]](_0x1a2b[4]).focus(); } } catch (_0xo5p6) { _0xe5f6[_0x1a2b[7]] = 'Có lỗi xảy ra. Vui lòng thử lại!'; _0xe5f6[_0x1a2b[8]][_0x1a2b[9]] = _0x1a2b[10]; } } document[_0x1a2b[3]](_0x1a2b[4])[_0x1a2b[33]](_0x1a2b[32], function (_0xq7r8) { if (_0xq7r8[_0x1a2b[34]] === _0x1a2b[35]) { _0xa1b2(); } }); document[_0x1a2b[3]](_0x1a2b[31])[_0x1a2b[36]](_0x1a2b[35], function (_0xs9t0) { _0xs9t0[_0x1a2b[37]](); alert('Tính năng liên hệ nhanh PH đã được kích hoạt!\n\nBạn có thể sử dụng các nút Gọi và Zalo bên dưới để liên hệ với phụ huynh.'); }); (function () { if (_0x8z9a()) { document[_0x1a2b[3]]('passwordScreen')[_0x1a2b[22]](_0x1a2b[20]); document[_0x1a2b[3]]('mainContent')[_0x1a2b[22]](_0x1a2b[21]); _0x4p5q(); const _0xu1v2 = document[_0x1a2b[3]](_0x1a2b[31]); _0xu1v2[_0x1a2b[24]] = '<i class="fas fa-paper-plane"></i> Liên hệ nhanh PH (Đã kích hoạt)'; _0xu1v2[_0x1a2b[8]].background = 'linear-gradient(135deg, #2ecc71 0%, #27ae60 100%)'; } else { document[_0x1a2b[3]]('passwordScreen')[_0x1a2b[23]](_0x1a2b[20]); document[_0x1a2b[3]]('mainContent')[_0x1a2b[23]](_0x1a2b[21]); } })();
+        
+        const _0x1a2b = ['MTIzNDU2', 'YXRvYg==', 'cGFyc2VJbnQ='];
+        const _0x3c4d = function (_0x5e6f, _0x7g8h) {
+            return _0x5e6f + _0x7g8h;
+        };
+        const _0x9i0j = atob(_0x1a2b[0]); 
+        const correctPassword = _0x9i0j;
+        let passwordHash = null;
+
+        
+        const encryptedData = 'W3sibmFtZSI6Ik5ndXnhu4VuIE1pbmggQW5oIiwicGhvbmUiOiIwOTEzNDM1NzM1In0seyJuYW1lIjoiTmd1eeG7gW4gVGjhu4cgWHXhuqFuIE5oaSIsInBob25lIjoiMDk3OTg0NTA2NCJ9LHsibmFtZSI6IlRy4bqnbiBUaOG7gyBD4bqhbSBOaHVuZyIsInBob25lIjoiMDMzODQ2MjYxOCJ9LHsibmFtZSI6IlRy4bqnbiBUaOG7gyBUaMO6eSBRdeG7gW5oIiwicGhvbmUiOiIwMzk0NTY5NzQyIn0seyJuYW1lIjoiTmd1eeG7gW4gVGjhu4cgVMO6IFPGoW5nIiwicGhvbmUiOiIwOTc0NjQ3NDM4In0seyJuYW1lIjoiTMOqIMSQw7RuZyBUaHkiLCJwaG9uZSI6IjA5NDExMDI5NjEifSx7Im5hbWUiOiJOZ3V54buBbiBQaOG6oW0gQuG6oW8gVHLhuqFuIiwicGhvbmUiOiIwNzA0OTYwNDA1In0seyJuYW1lIjoiTmd1eeG7gW4gVGjhu4cgS2ltIEPGsOG7o25nIiwicGhvbmUiOiIwMzM3NjUzMzc2In0seyJuYW1lIjoiSHXhu4luaCBNaW5oIFTGsOG7o25nIiwicGhvbmUiOiIwMzU1MjIzMjUyIn0seyJuYW1lIjoiTmd1eeG7gW4gVGjhu4cgVGjhu6N5IEThu6luZyIsInBob25lIjoiMDM3NTE4MTUxNiJ9LHsibmFtZSI6Ik5ndXnhu4VuIFRoYW5oIMSQ4bqhdCIsInBob25lIjoiMDc4MzU5MzQ3MCJ9LHsibmFtZSI6IlRy4bqnbiBUaeG7gW4gRMSQ4bqhdCIsInBob25lIjoiMDkwMzA2MzM4NyJ9LHsibmFtZSI6IkJ1aSBNaW5oIMSQ4bqhdWMiLCJwaG9uZSI6IjA5NDI3Nzg3OTIifSx7Im5hbWUiOiJUcuG6p24gR2lhIEh1w6kiLCJwaG9uZSI6IjA4Mzk1MzcwNjAifSx7Im5hbWUiOiLEkWluaCBUcnVuZyBLacOqbiIsInBob25lIjoiMDk0OTc2Njc4OCJ9LHsibmFtZSI6IkzDqiBUaOG7gyBUaMO6eSBLacOqbiIsInBob25lIjoiMDMzMzA1ODU5NiJ9LHsibmFtZSI6IkzDqiBUaOG7gyBUaMO6eSBLacOqbiIsInBob25lIjoiMDk0OTUyNDczOCJ9LHsibmFtZSI6IlRy4bqnbiBOZ3V54buBbiBIw7JuZyBMYW0iLCJwaG9uZSI6IjA4MzgyNDQxMTcifSx7Im5hbWUiOiJOZ3V54buBbiBUaOG7gyBLacOqbiBMacOqbiIsInBob25lIjoiMDg2OTg2NjAxNCJ9LHsibmFtZSI6IkzDqiBOZ2PDqiBMaW5oIiwicGhvbmUiOiIwOTA3MDE3NDk2In0seyJuYW1lIjoiVMSnbmcgSG/DoW5nIFRyw7p1YyBMaW5oIiwicGhvbmUiOiIwOTc1NTY1MTczIn0seyJuYW1lIjoiVHLhuqduIFRoYW5oIExvbmciLCJwaG9uZSI6IjA4MzQ1NzI3OTUifSx7Im5hbWUiOiJOZ3V54buBbiBLaW0gVOG7o25nIE15IiwicGhvbmUiOiIwOTM5NzE1NzM1In0seyJuYW1lIjoiUGjhuqFtIFRoaOG7gyBLaW0gTmdv4bqjYyIsInBob25lIjoiMDM2Nzk4Nzc0NCJ9LHsibmFtZSI6Ik5ndXnhu4VuIFRoaW7hu4duIE5ow6BuIiwicGhvbmUiOiIwMzMyMTA4NzY2In0seyJuYW1lIjoiVHLhuqduIE5n4bqjYyBOaMOgbiIsInBob25lIjoiMDk2NTEyMTUzMiJ9LHsibmFtZSI6IlRy4bqnbiBUaOG7gyBZ4bqldG4gTmhpIiwicGhvbmUiOiIwNzc0MDgyMDk3In0seyJuYW1lIjoiQnVpIFRoaOG7gyBUaGnhw6puIE5odSIsInBob25lIjoiMDM5MjA2MDA1MCJ9LHsibmFtZSI6IkJ1aSBUcuG6p24gUXV5bmggTmh1IiwicGhvbmUiOiIwNzk4MDA2MjA0In0seyJuYW1lIjoiUGjhuqFtIE1pbmggTmh1w6l0IiwicGhvbmUiOiIwMzc1MTg0NTYwIn0seyJuYW1lIjoiTMOqIE1pbmggUXXDrSIsInBob25lIjoiMDM1NDMyODQxNiJ9LHsibmFtZSI6IkJ1aSBUaOG7gyBLacOqbiBRdXkiLCJwaG9uZSI6IjA5MDc1NTYxOTAifSx7Im5hbWUiOiJOZ3V54buBbiBUaOG7gyBCw6tjaCBUaGkiLCJwaG9uZSI6IjAzNTQxMDU0MjQifSx7Im5hbWUiOiJUcnXGsW5nIFRoaOG7gyBC4bqhb28gVGhpIiwicGhvbmUiOiIwMzMyMDUwNjY3In0seyJuYW1lIjoiTmd1eeG7gW4gRMSQ4bqhdWMgVGhpbmgiLCJwaG9uZSI6IjAzMzU3NzY3NTIifSx7Im5hbWUiOiJEw7x1b25nIE5n4bqjYyBUaHXhu4MiLCJwaG9uZSI6IjA5MTg5OTUwMzMifSx7Im5hbWUiOiJIw7JuZyBOZ2PDqiBBbmggVGh14buDIiwicGhvbmUiOiIwMzI4Mjk0NjE0In0seyJuYW1lIjoiTMOqIFbhuqBuIFRodeG7gW4iLCJwaG9uZSI6IjAzNTI4ODA0NDQifSx7Im5hbWUiOiJMw6ogSG/DoW5nIEJhbyBUaHkiLCJwaG9uZSI6IjAzNjQ3NzM0NTEifSx7Im5hbWUiOiJOZ3V54buBbiBUaOG7gyBCYW8gVHLhuqFtIiwicGhvbmUiOiIwNzk1OTExMzg0In0seyJuYW1lIjoiTmd1eeG7gW4gVGjhu4cgTmdv4bqjYyBUcuG6p24iLCJwaG9uZSI6IjA5Mzk1MDYyNDcifSx7Im5hbWUiOiJMw6ogVGjhu4cgTmh1IMSRIiwicGhvbmUiOiIwMzY1MTE1NDQ0In0seyJuYW1lIjoiTMOqIFRoaOG7gyBOZ2PDqiBZ4bqldG4iLCJwaG9uZSI6IjAzNDk5NTExNDUifSx7Im5hbWUiOiJOZ3V54buBbiBUaOG7gyBUaOG7oW8gVmkiLCJwaG9uZSI6IjA5NzU4NDQ0NTgifSx7Im5hbWUiOiJOZ3V54buBbiBUcnXDqWMgxJDhuqFvIiwicGhvbmUiOiIwOTA3NDkwODM4In0seyJuYW1lIjoiTmd1eeG7gW4gVGjhu4cgw4FuaCBIw7JuZyIsInBob25lIjoiMDM3MjkzMDQxMyJ9LHsibmFtZSI6IkhhIFRoaOG7gyBUdXnhw6l0IE15IiwicGhvbmUiOiIwMzQyMjM3NjcxIn0seyJuYW1lIjoiTmd1eeG7gW4gVGjhu4cgS2ltIFRpw6puIiwicGhvbmUiOiIwOTc3MzcxMzE4In1d';
+
+       
+        async function hashPassword(_0x1p2q) {
+            const _0x3r4s = new TextEncoder();
+            const _0x5t6u = _0x3r4s.encode(_0x1p2q);
+            const _0x7v8w = await crypto.subtle.digest('SHA-256', _0x5t6u);
+            const _0x9x0y = Array.from(new Uint8Array(_0x7v8w));
+            const _0xaz1b = _0x9x0y.map(_0xc2d3 => _0xc2d3.toString(16).padStart(2, '0')).join('');
+            return _0xaz1b;
+        }
+
+        
+        (async function initPasswordHash() {
+            passwordHash = await hashPassword(correctPassword);
+        })();
+
+        
+        function checkSession() {
+            const session = sessionStorage.getItem('pageAccess');
+            if (session) {
+                const sessionTime = parseInt(session);
+                const sessionDuration = 60 * 60 * 1000; // 1 giờ
+                if (Date.now() - sessionTime < sessionDuration) {
+                    return true; // Session còn hiệu lực
+                } else {
+                    sessionStorage.removeItem('pageAccess');
+                }
+            }
+            return false;
+        }
+
+        
+        function saveSession() {
+            sessionStorage.setItem('pageAccess', Date.now().toString());
+        }
+
+        
+        function decodeData() {
+            try {
+                const _0x1d2e = atob(encryptedData);
+                return JSON.parse(_0x1d2e);
+            } catch (_0x3f4g) {
+                return [];
+            }
+        }
+
+        // Hiển thị danh sách học sinh
+        function renderStudentList() {
+            const students = decodeData();
+            const studentList = document.getElementById('studentList');
+            studentList.innerHTML = '';
+
+            students.forEach(student => {
+                const card = document.createElement('div');
+                card.className = 'student-card';
+
+                card.innerHTML = `
+                    <div class="student-name">
+                        <i class="fas fa-user-graduate"></i> ${student.name}
+                    </div>
+                    <div class="action-buttons">
+                        <a href="tel:${student.phone}" class="btn-call">
+                            <i class="fas fa-phone-volume"></i> Gọi
+                        </a>
+                        <a href="https://zalo.me/${student.phone}" class="btn-zalo" target="_blank">
+                            <i class="fab fa-zalo"></i> ZALO
+                        </a>
+                    </div>
+                `;
+
+                studentList.appendChild(card);
+            });
+        }
+
+        // Kiểm tra password - Obfuscated
+        async function checkPassword() {
+            const _0x1i2n = document.getElementById('passwordInput').value.trim();
+            const _0x3e4r = document.getElementById('passwordError');
+
+            if (!_0x1i2n) {
+                _0x3e4r.textContent = 'Vui lòng nhập mật khẩu!';
+                _0x3e4r.style.display = 'block';
+                return;
+            }
+
+            try {
+                if (!passwordHash) {
+                    passwordHash = await hashPassword(correctPassword);
+                }
+
+                const _0x5h6a = await hashPassword(_0x1i2n);
+
+                if (_0x5h6a === passwordHash) {
+                    // Mật khẩu đúng - hiển thị trang và decode dữ liệu
+                    saveSession();
+                    const _0x7s8c = document.getElementById('passwordScreen');
+                    const _0x9m0c = document.getElementById('mainContent');
+                    _0x7s8c.classList.add('hidden');
+                    _0x9m0c.classList.add('visible');
+
+                    renderStudentList();
+
+                    const _0x1t2b = document.getElementById('teacherLink');
+                    _0x1t2b.innerHTML = '<i class="fas fa-paper-plane"></i> Liên hệ nhanh PH (Đã kích hoạt)';
+                    _0x1t2b.style.background = 'linear-gradient(135deg, #2ecc71 0%, #27ae60 100%)';
+                    _0x1t2b.onclick = function () {
+                        alert('Tính năng liên hệ nhanh PH đã được kích hoạt!\n\nBạn có thể sử dụng các nút Gọi và Zalo bên dưới để liên hệ với phụ huynh.');
+                    };
+                } else {
+                    _0x3e4r.textContent = 'Mật khẩu không đúng!';
+                    _0x3e4r.style.display = 'block';
+                    document.getElementById('passwordInput').value = '';
+                    document.getElementById('passwordInput').focus();
+                }
+            } catch (_0x4e5r) {
+                _0x3e4r.textContent = 'Có lỗi xảy ra. Vui lòng thử lại!';
+                _0x3e4r.style.display = 'block';
+            }
+        }
+
+        // Enter để xác nhận
+        document.getElementById('passwordInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+
+        // Xử lý nút "Liên hệ nhanh PH"
+        document.getElementById('teacherLink').addEventListener('click', function (e) {
+            e.preventDefault();
+            alert('Tính năng liên hệ nhanh PH đã được kích hoạt!\n\nBạn có thể sử dụng các nút Gọi và Zalo bên dưới để liên hệ với phụ huynh.');
+        });
+
+        // Kiểm tra session khi trang load
+        (function initPage() {
+            if (checkSession()) {
+                // Đã có session, hiển thị trang ngay và decode dữ liệu
+                document.getElementById('passwordScreen').classList.add('hidden');
+                document.getElementById('mainContent').classList.add('visible');
+                renderStudentList();
+
+                // Kích hoạt tính năng liên hệ nhanh
+                const teacherBtn = document.getElementById('teacherLink');
+                teacherBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Liên hệ nhanh PH (Đã kích hoạt)';
+                teacherBtn.style.background = 'linear-gradient(135deg, #2ecc71 0%, #27ae60 100%)';
+            } else {
+                // Chưa có session, hiển thị màn hình password
+                document.getElementById('passwordScreen').classList.remove('hidden');
+                document.getElementById('mainContent').classList.remove('visible');
+            }
+        })();
     </script>
 </body>
 
