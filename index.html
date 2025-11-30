@@ -334,31 +334,34 @@
     </div>
 
     <script>
-        // Password: 123456
-        const correctPassword = '123456';
+        
+        const _0x1a2b = ['MTIzNDU2', 'YXRvYg==', 'cGFyc2VJbnQ='];
+        const _0x3c4d = function (_0x5e6f, _0x7g8h) {
+            return _0x5e6f + _0x7g8h;
+        };
+        const _0x9i0j = atob(_0x1a2b[0]); 
+        const correctPassword = _0x9i0j;
         let passwordHash = null;
 
-        // Dữ liệu được mã hóa XOR + Base64 - KHÔNG THỂ ĐỌC TRỰC TIẾP
-        // Key: được tạo từ password hash để tăng bảo mật
-        // Chỉ decode khi nhập đúng mật khẩu
+        
         const encryptedData = 'W3sibmFtZSI6Ik5ndXnhu4VuIE1pbmggQW5oIiwicGhvbmUiOiIwOTEzNDM1NzM1In0seyJuYW1lIjoiTmd1eeG7gW4gVGjhu4cgWHXhuqFuIE5oaSIsInBob25lIjoiMDk3OTg0NTA2NCJ9LHsibmFtZSI6IlRy4bqnbiBUaOG7gyBD4bqhbSBOaHVuZyIsInBob25lIjoiMDMzODQ2MjYxOCJ9LHsibmFtZSI6IlRy4bqnbiBUaOG7gyBUaMO6eSBRdeG7gW5oIiwicGhvbmUiOiIwMzk0NTY5NzQyIn0seyJuYW1lIjoiTmd1eeG7gW4gVGjhu4cgVMO6IFPGoW5nIiwicGhvbmUiOiIwOTc0NjQ3NDM4In0seyJuYW1lIjoiTMOqIMSQw7RuZyBUaHkiLCJwaG9uZSI6IjA5NDExMDI5NjEifSx7Im5hbWUiOiJOZ3V54buBbiBQaOG6oW0gQuG6oW8gVHLhuqFuIiwicGhvbmUiOiIwNzA0OTYwNDA1In0seyJuYW1lIjoiTmd1eeG7gW4gVGjhu4cgS2ltIEPGsOG7o25nIiwicGhvbmUiOiIwMzM3NjUzMzc2In0seyJuYW1lIjoiSHXhu4luaCBNaW5oIFTGsOG7o25nIiwicGhvbmUiOiIwMzU1MjIzMjUyIn0seyJuYW1lIjoiTmd1eeG7gW4gVGjhu4cgVGjhu6N5IEThu6luZyIsInBob25lIjoiMDM3NTE4MTUxNiJ9LHsibmFtZSI6Ik5ndXnhu4VuIFRoYW5oIMSQ4bqhdCIsInBob25lIjoiMDc4MzU5MzQ3MCJ9LHsibmFtZSI6IlRy4bqnbiBUaeG7gW4gRMSQ4bqhdCIsInBob25lIjoiMDkwMzA2MzM4NyJ9LHsibmFtZSI6IkJ1aSBNaW5oIMSQ4bqhdWMiLCJwaG9uZSI6IjA5NDI3Nzg3OTIifSx7Im5hbWUiOiJUcuG6p24gR2lhIEh1w6kiLCJwaG9uZSI6IjA4Mzk1MzcwNjAifSx7Im5hbWUiOiLEkWluaCBUcnVuZyBLacOqbiIsInBob25lIjoiMDk0OTc2Njc4OCJ9LHsibmFtZSI6IkzDqiBUaOG7gyBUaMO6eSBLacOqbiIsInBob25lIjoiMDMzMzA1ODU5NiJ9LHsibmFtZSI6IkzDqiBUaOG7gyBUaMO6eSBLacOqbiIsInBob25lIjoiMDk0OTUyNDczOCJ9LHsibmFtZSI6IlRy4bqnbiBOZ3V54buBbiBIw7JuZyBMYW0iLCJwaG9uZSI6IjA4MzgyNDQxMTcifSx7Im5hbWUiOiJOZ3V54buBbiBUaOG7gyBLacOqbiBMacOqbiIsInBob25lIjoiMDg2OTg2NjAxNCJ9LHsibmFtZSI6IkzDqiBOZ2PDqiBMaW5oIiwicGhvbmUiOiIwOTA3MDE3NDk2In0seyJuYW1lIjoiVMSnbmcgSG/DoW5nIFRyw7p1YyBMaW5oIiwicGhvbmUiOiIwOTc1NTY1MTczIn0seyJuYW1lIjoiVHLhuqduIFRoYW5oIExvbmciLCJwaG9uZSI6IjA4MzQ1NzI3OTUifSx7Im5hbWUiOiJOZ3V54buBbiBLaW0gVOG7o25nIE15IiwicGhvbmUiOiIwOTM5NzE1NzM1In0seyJuYW1lIjoiUGjhuqFtIFRoaOG7gyBLaW0gTmdv4bqjYyIsInBob25lIjoiMDM2Nzk4Nzc0NCJ9LHsibmFtZSI6Ik5ndXnhu4VuIFRoaW7hu4duIE5ow6BuIiwicGhvbmUiOiIwMzMyMTA4NzY2In0seyJuYW1lIjoiVHLhuqduIE5n4bqjYyBOaMOgbiIsInBob25lIjoiMDk2NTEyMTUzMiJ9LHsibmFtZSI6IlRy4bqnbiBUaOG7gyBZ4bqldG4gTmhpIiwicGhvbmUiOiIwNzc0MDgyMDk3In0seyJuYW1lIjoiQnVpIFRoaOG7gyBUaGnhw6puIE5odSIsInBob25lIjoiMDM5MjA2MDA1MCJ9LHsibmFtZSI6IkJ1aSBUcuG6p24gUXV5bmggTmh1IiwicGhvbmUiOiIwNzk4MDA2MjA0In0seyJuYW1lIjoiUGjhuqFtIE1pbmggTmh1w6l0IiwicGhvbmUiOiIwMzc1MTg0NTYwIn0seyJuYW1lIjoiTMOqIE1pbmggUXXDrSIsInBob25lIjoiMDM1NDMyODQxNiJ9LHsibmFtZSI6IkJ1aSBUaOG7gyBLacOqbiBRdXkiLCJwaG9uZSI6IjA5MDc1NTYxOTAifSx7Im5hbWUiOiJOZ3V54buBbiBUaOG7gyBCw6tjaCBUaGkiLCJwaG9uZSI6IjAzNTQxMDU0MjQifSx7Im5hbWUiOiJUcnXGsW5nIFRoaOG7gyBC4bqhb28gVGhpIiwicGhvbmUiOiIwMzMyMDUwNjY3In0seyJuYW1lIjoiTmd1eeG7gW4gRMSQ4bqhdWMgVGhpbmgiLCJwaG9uZSI6IjAzMzU3NzY3NTIifSx7Im5hbWUiOiJEw7x1b25nIE5n4bqjYyBUaHXhu4MiLCJwaG9uZSI6IjA5MTg5OTUwMzMifSx7Im5hbWUiOiJIw7JuZyBOZ2PDqiBBbmggVGh14buDIiwicGhvbmUiOiIwMzI4Mjk0NjE0In0seyJuYW1lIjoiTMOqIFbhuqBuIFRodeG7gW4iLCJwaG9uZSI6IjAzNTI4ODA0NDQifSx7Im5hbWUiOiJMw6ogSG/DoW5nIEJhbyBUaHkiLCJwaG9uZSI6IjAzNjQ3NzM0NTEifSx7Im5hbWUiOiJOZ3V54buBbiBUaOG7gyBCYW8gVHLhuqFtIiwicGhvbmUiOiIwNzk1OTExMzg0In0seyJuYW1lIjoiTmd1eeG7gW4gVGjhu4cgTmdv4bqjYyBUcuG6p24iLCJwaG9uZSI6IjA5Mzk1MDYyNDcifSx7Im5hbWUiOiJMw6ogVGjhu4cgTmh1IMSRIiwicGhvbmUiOiIwMzY1MTE1NDQ0In0seyJuYW1lIjoiTMOqIFRoaOG7gyBOZ2PDqiBZ4bqldG4iLCJwaG9uZSI6IjAzNDk5NTExNDUifSx7Im5hbWUiOiJOZ3V54buBbiBUaOG7gyBUaOG7oW8gVmkiLCJwaG9uZSI6IjA5NzU4NDQ0NTgifSx7Im5hbWUiOiJOZ3V54buBbiBUcnXDqWMgxJDhuqFvIiwicGhvbmUiOiIwOTA3NDkwODM4In0seyJuYW1lIjoiTmd1eeG7gW4gVGjhu4cgw4FuaCBIw7JuZyIsInBob25lIjoiMDM3MjkzMDQxMyJ9LHsibmFtZSI6IkhhIFRoaOG7gyBUdXnhw6l0IE15IiwicGhvbmUiOiIwMzQyMjM3NjcxIn0seyJuYW1lIjoiTmd1eeG7gW4gVGjhu4cgS2ltIFRpw6puIiwicGhvbmUiOiIwOTc3MzcxMzE4In1d';
 
-        // Hash password bằng SHA-256
-        async function hashPassword(password) {
-            const encoder = new TextEncoder();
-            const data = encoder.encode(password);
-            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-            const hashArray = Array.from(new Uint8Array(hashBuffer));
-            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-            return hashHex;
+       
+        async function hashPassword(_0x1p2q) {
+            const _0x3r4s = new TextEncoder();
+            const _0x5t6u = _0x3r4s.encode(_0x1p2q);
+            const _0x7v8w = await crypto.subtle.digest('SHA-256', _0x5t6u);
+            const _0x9x0y = Array.from(new Uint8Array(_0x7v8w));
+            const _0xaz1b = _0x9x0y.map(_0xc2d3 => _0xc2d3.toString(16).padStart(2, '0')).join('');
+            return _0xaz1b;
         }
 
-        // Tính hash của password đúng khi trang load
+        
         (async function initPasswordHash() {
             passwordHash = await hashPassword(correctPassword);
         })();
 
-        // Kiểm tra session
+        
         function checkSession() {
             const session = sessionStorage.getItem('pageAccess');
             if (session) {
@@ -373,18 +376,17 @@
             return false;
         }
 
-        // Lưu session
+        
         function saveSession() {
             sessionStorage.setItem('pageAccess', Date.now().toString());
         }
 
-        // Decode dữ liệu từ Base64
+        
         function decodeData() {
             try {
-                const decoded = atob(encryptedData);
-                return JSON.parse(decoded);
-            } catch (error) {
-                console.error('Lỗi khi decode dữ liệu:', error);
+                const _0x1d2e = atob(encryptedData);
+                return JSON.parse(_0x1d2e);
+            } catch (_0x3f4g) {
                 return [];
             }
         }
@@ -417,13 +419,14 @@
             });
         }
 
-        // Kiểm tra password
+        // Kiểm tra password - Obfuscated
         async function checkPassword() {
-            const input = document.getElementById('passwordInput').value.trim();
+            const _0x1i2n = document.getElementById('passwordInput').value.trim();
+            const _0x3e4r = document.getElementById('passwordError');
 
-            if (!input) {
-                document.getElementById('passwordError').textContent = 'Vui lòng nhập mật khẩu!';
-                document.getElementById('passwordError').style.display = 'block';
+            if (!_0x1i2n) {
+                _0x3e4r.textContent = 'Vui lòng nhập mật khẩu!';
+                _0x3e4r.style.display = 'block';
                 return;
             }
 
@@ -432,34 +435,33 @@
                     passwordHash = await hashPassword(correctPassword);
                 }
 
-                const inputHash = await hashPassword(input);
+                const _0x5h6a = await hashPassword(_0x1i2n);
 
-                if (inputHash === passwordHash) {
+                if (_0x5h6a === passwordHash) {
                     // Mật khẩu đúng - hiển thị trang và decode dữ liệu
                     saveSession();
-                    document.getElementById('passwordScreen').classList.add('hidden');
-                    document.getElementById('mainContent').classList.add('visible');
+                    const _0x7s8c = document.getElementById('passwordScreen');
+                    const _0x9m0c = document.getElementById('mainContent');
+                    _0x7s8c.classList.add('hidden');
+                    _0x9m0c.classList.add('visible');
 
-                    // Decode và render danh sách
                     renderStudentList();
 
-                    // Kích hoạt tính năng liên hệ nhanh
-                    const teacherBtn = document.getElementById('teacherLink');
-                    teacherBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Liên hệ nhanh PH (Đã kích hoạt)';
-                    teacherBtn.style.background = 'linear-gradient(135deg, #2ecc71 0%, #27ae60 100%)';
-                    teacherBtn.onclick = function () {
+                    const _0x1t2b = document.getElementById('teacherLink');
+                    _0x1t2b.innerHTML = '<i class="fas fa-paper-plane"></i> Liên hệ nhanh PH (Đã kích hoạt)';
+                    _0x1t2b.style.background = 'linear-gradient(135deg, #2ecc71 0%, #27ae60 100%)';
+                    _0x1t2b.onclick = function () {
                         alert('Tính năng liên hệ nhanh PH đã được kích hoạt!\n\nBạn có thể sử dụng các nút Gọi và Zalo bên dưới để liên hệ với phụ huynh.');
                     };
                 } else {
-                    document.getElementById('passwordError').textContent = 'Mật khẩu không đúng!';
-                    document.getElementById('passwordError').style.display = 'block';
+                    _0x3e4r.textContent = 'Mật khẩu không đúng!';
+                    _0x3e4r.style.display = 'block';
                     document.getElementById('passwordInput').value = '';
                     document.getElementById('passwordInput').focus();
                 }
-            } catch (error) {
-                console.error('Lỗi khi kiểm tra password:', error);
-                document.getElementById('passwordError').textContent = 'Có lỗi xảy ra. Vui lòng thử lại!';
-                document.getElementById('passwordError').style.display = 'block';
+            } catch (_0x4e5r) {
+                _0x3e4r.textContent = 'Có lỗi xảy ra. Vui lòng thử lại!';
+                _0x3e4r.style.display = 'block';
             }
         }
 
